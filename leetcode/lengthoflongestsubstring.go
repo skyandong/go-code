@@ -7,8 +7,7 @@ func LengthOfLongestSubstring(s string) int {
 	var maxLen, begin, end int
 	for ; end < len(s); end++ {
 		if index, ok := mymap[s[end]]; ok && index >= begin {
-			max := end - begin
-			if max > maxLen {
+			if max := end - begin; max > maxLen {
 				maxLen = max
 			}
 			begin = index + 1
